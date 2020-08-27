@@ -1,0 +1,28 @@
+###
+
+GET http://localhost:8090/demo
+Accept: application/json
+#Authorization: Basic user 123456
+
+###
+
+GET http://localhost:8091/demo-client/actuator
+Accept: application/json
+#Authorization: Basic user 123456
+
+###
+
+POST http://localhost:8091/demo-client/actuator/refresh
+Content-Type: application/json
+#Authorization: Basic user 123456
+
+//{}
+
+###
+
+GET http://localhost:8091/demo-client/actuator/health
+Accept: application/json
+Authorization: Basic user 123456
+
+###
+

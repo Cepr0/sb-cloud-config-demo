@@ -1,0 +1,53 @@
+info:
+  component: Config Server
+
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include:
+          - health
+          - info
+          - prometheus
+  server:
+    servlet:
+      context-path: /^project.name^
+
+spring:
+  application:
+    name: ^project.name^
+  cloud:
+    config:
+      server:
+        native:
+          order: 0
+        jdbc:
+          order: 1
+  datasource:
+    url: jdbc:postgresql://localhost:5432/demo
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        order_inserts: true
+        order_updates: true
+        jdbc:
+          batch_size: 20
+          fetch_size: 20
+          batch_versioned_data: true
+    hibernate:
+      ddl-auto: validate
+  main:
+    banner-mode: off
+  security:
+    user:
+      name: user
+      password: 123456
+
+server:
+  forward-headers-strategy: framework
+  shutdown: graceful

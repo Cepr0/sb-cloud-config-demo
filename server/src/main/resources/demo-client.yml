@@ -1,0 +1,30 @@
+info:
+  component: Config Client
+
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include:
+          - refresh
+          - health
+          - info
+          - prometheus
+  server:
+    servlet:
+      context-path: /demo-client
+
+spring:
+  application:
+    name: demo-client
+  main:
+    banner-mode: off
+#  security:
+#    user:
+#      name: user
+#      password: 123456
+
+server:
+  forward-headers-strategy: framework
+  shutdown: graceful

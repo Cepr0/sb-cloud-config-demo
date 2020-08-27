@@ -1,0 +1,24 @@
+GET http://localhost:8080/demo-client/default
+Accept: application/json
+Authorization: Basic user 123456
+
+###
+
+GET http://localhost:8080/demo-client/local
+Accept: application/json
+Authorization: Basic user 123456
+
+###
+
+GET http://localhost:8081/config-service/actuator
+Accept: application/json
+Authorization: Basic user 123456
+
+###
+
+GET http://localhost:8081/config-service/actuator/health
+Accept: application/json
+Authorization: Basic user 123456
+
+###
+
