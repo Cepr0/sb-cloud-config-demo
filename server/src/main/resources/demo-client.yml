@@ -18,6 +18,19 @@ management:
 spring:
   application:
     name: demo-client
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+  cloud:
+    bus:
+      enabled: true
+      refresh:
+        enabled: true
+
   main:
     banner-mode: off
 #  security:

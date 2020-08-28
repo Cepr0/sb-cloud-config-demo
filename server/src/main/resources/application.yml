@@ -17,6 +17,13 @@ management:
 spring:
   application:
     name: ^project.name^
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
   cloud:
     config:
       server:
@@ -24,13 +31,16 @@ spring:
           order: 0
         jdbc:
           order: 1
+
   flyway:
     clean-on-validation-error: true
+
   datasource:
     url: jdbc:postgresql://localhost:5432/demo
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
+
   jpa:
     open-in-view: false
     properties:
@@ -43,8 +53,10 @@ spring:
           batch_versioned_data: true
     hibernate:
       ddl-auto: validate
+
   main:
     banner-mode: off
+
   security:
     user:
       name: user
