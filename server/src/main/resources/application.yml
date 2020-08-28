@@ -24,6 +24,8 @@ spring:
           order: 0
         jdbc:
           order: 1
+  flyway:
+    clean-on-validation-error: true
   datasource:
     url: jdbc:postgresql://localhost:5432/demo
     username: postgres

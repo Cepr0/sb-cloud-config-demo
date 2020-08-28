@@ -6,5 +6,7 @@ create table properties (
 	value       text
 );
 
--- insert into properties (key, value) values ('property1', 'value 1');
--- insert into properties (key, value) values ('property2', 'value 2');
+create index properties_application_profile_label_index on properties (application, profile, label);
+
+insert into public.properties (application, profile, label, key, value) values ('demo-client', 'default', 'master', 'demo.text', 'db');
+insert into public.properties (application, profile, label, key, value) values ('demo-client', 'default', 'master', 'demo.num', '1');
