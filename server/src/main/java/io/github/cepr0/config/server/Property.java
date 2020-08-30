@@ -1,5 +1,6 @@
 package io.github.cepr0.config.server;
 
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import lombok.*;
 import lombok.experimental.Tolerate;
 
@@ -13,19 +14,17 @@ import java.io.Serializable;
 @Table(name = "properties")
 public class Property {
 
+    @JsonUnwrapped
     @Id
     @EmbeddedId
     private PK pk;
 
-    @Version
-    private Short version;
-
     private String value;
 
     @Tolerate
-    public Property(String application, String profile, String key, String value) {
-        this.pk = new PK(application, profile, "master", key);
-        this.value = value;
+    public Property(String application, String key, Object value) {
+        this.pk = new PK(application, "default", "master", key);
+        this.value = value.toString();
     }
 
     @Data

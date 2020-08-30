@@ -3,14 +3,15 @@ info:
 
 management:
   endpoints:
-    enabled-by-default: true
+#    enabled-by-default: true
     web:
       exposure:
-        include:
-          - refresh
-          - health
-          - info
-          - prometheus
+        include: "*"
+#          - refresh
+#          - bus-refresh
+#          - health
+#          - info
+#          - prometheus
   server:
     servlet:
       context-path: /demo-client
@@ -30,14 +31,17 @@ spring:
       enabled: true
       refresh:
         enabled: true
-
   main:
     banner-mode: off
-#  security:
-#    user:
-#      name: user
-#      password: 123456
 
 server:
   forward-headers-strategy: framework
   shutdown: graceful
+
+logging:
+  level:
+    io.github.cepr0: debug
+    org.springframework:
+      security: debug
+      web: debug
+      cloud: debug

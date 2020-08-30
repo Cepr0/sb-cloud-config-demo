@@ -3,7 +3,7 @@ info:
 
 management:
   endpoints:
-    enabled-by-default: true
+#    enabled-by-default: true
     web:
       exposure:
         include:
@@ -24,13 +24,13 @@ spring:
     username: guest
     password: guest
 
-  cloud:
-    config:
-      server:
-        native:
-          order: 0
-        jdbc:
-          order: 1
+#  cloud:
+#    config:
+#      server:
+#        native:
+#          order: 0
+#        jdbc:
+#          order: 1
 
   flyway:
     clean-on-validation-error: true
@@ -57,11 +57,31 @@ spring:
   main:
     banner-mode: off
 
-  security:
-    user:
-      name: user
-      password: 123456
+  autoconfigure:
+    exclude: com.integralblue.log4jdbc.spring.Log4jdbcAutoConfiguration
 
 server:
   forward-headers-strategy: framework
   shutdown: graceful
+
+logging:
+  level:
+    io.github.cepr0: debug
+    org.springframework:
+      security: debug
+      web: debug
+      cloud: debug
+    jdbc:
+      sqltiming: info
+      resultsettable: info
+      sqlonly: fatal
+      audit: fatal
+      resultset: fatal
+      connection: fatal
+
+log4jdbc:
+  dump.sql:
+    addsemicolon: true
+    maxlinelength: 0
+  trim.sql:
+    extrablanklines: false

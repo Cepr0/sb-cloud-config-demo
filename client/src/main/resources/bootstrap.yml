@@ -5,8 +5,6 @@ spring:
     banner-mode: off
   cloud:
     config:
-      username: user
-      password: 123456
       uri: http://localhost:8080
       fail-fast: true
 server:

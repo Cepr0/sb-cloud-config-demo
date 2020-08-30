@@ -1,8 +1,0 @@
-logging:
-  level:
-    io.github.cepr0: debug
-    org.springframework:
-      security: debug
-      web: debug
-      cloud: debug
-

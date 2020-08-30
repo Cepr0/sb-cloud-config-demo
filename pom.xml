@@ -30,19 +30,6 @@
         <log4jdbc.version>2.0.0</log4jdbc.version>
     </properties>
 
-    <profiles>
-        <profile>
-            <id>log4jdbc</id>
-            <dependencies>
-                <dependency>
-                    <groupId>com.integralblue</groupId>
-                    <artifactId>log4jdbc-spring-boot-starter</artifactId>
-                    <version>${log4jdbc.version}</version>
-                </dependency>
-            </dependencies>
-        </profile>
-    </profiles>
-
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -64,10 +51,6 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security.oauth.boot</groupId>
-            <artifactId>spring-security-oauth2-autoconfigure</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
