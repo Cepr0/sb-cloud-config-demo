@@ -6,12 +6,12 @@ management:
 #    enabled-by-default: true
     web:
       exposure:
-        include: "*"
-#          - refresh
-#          - bus-refresh
-#          - health
-#          - info
-#          - prometheus
+        include:
+          - refresh
+          - bus-refresh
+          - health
+          - info
+          - prometheus
   server:
     servlet:
       context-path: /demo-client
@@ -26,11 +26,12 @@ spring:
     username: guest
     password: guest
 
-  cloud:
-    bus:
-      enabled: true
-      refresh:
-        enabled: true
+#  cloud:
+#    bus:
+#      enabled: true
+#      refresh:
+#        enabled: true
+
   main:
     banner-mode: off
 
@@ -45,3 +46,4 @@ logging:
       security: debug
       web: debug
       cloud: debug
+      messaging: debug
